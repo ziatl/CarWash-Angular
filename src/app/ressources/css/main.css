@@ -147,7 +147,7 @@ textarea:focus, input:focus{
 #preloader-status {
     height: 180px;
 	width: 180px;
-    background: url(/src/assets/img/preloader.gif);
+    background: url(./../../../assets/img/preloader.gif);
     background-size: 80px 80px;
     background-repeat: no-repeat;
     background-position: center;
@@ -1087,7 +1087,7 @@ margin-bottom: 15px;
 16.Page Heading Section
 ==========================*/
 .pagehding-sec {
-  background-image: url("/src/assets/img/pg_hd.jpg");
+  background-image: url("../../../assets/img/pg_hd.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   padding: 50px 0;position:relative;

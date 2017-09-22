@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-3">
           <div class="logo">
-            <a href="index.html"><img src="./../assets/img/logo.png" alt=""/></a>
+            <a href ><img src="./../assets/img/logo.png" alt=""/></a>
           </div>
         </div>
         <div class="col-md-9 col-sm-9">
@@ -46,15 +46,23 @@
           <div class="menu">
             <nav id="main-menu" class="main-menu">
               <ul>
-                <li  class="active"><a href="index.html">Accueil</a></li>
-                <li><a href="service.html">Service<i class="fa fa-caret-down"></i></a>
+                <li  class="active">
+                  <a href >Accueil</a>
+                </li>
+                <li>
+                  <a routerLink="/service" routerLinkActive="active" (click)="showService()">
+                    Service<i class="fa fa-caret-down"></i>
+                  </a>
                   <ul>
-                    <li><a href="service.html">Service</a></li>
-                    <li><a href="service-details.html">Service Details</a></li>
+                    <li><a routerLink="/service" routerLinkActive="active" (click)="showService()">
+                      Service</a></li>
+                    <li>
+                      <a routerLink="/service-details" routerLinkActive="active" (click)="showServiceDetails()">Service Details</a>
+                    </li>
                   </ul>
                 </li>
                 <li><a href="#tarif">Tarifs</a></li>
-                <li><a href="contact.html">Nous contacter</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active" (click)="showContact()">Nous contacter</a></li>
               </ul>
             </nav>
           </div>
@@ -66,278 +74,7 @@
 </header>
 <!-- Header End -->
 
-<!-- Slider Section Start -->
-<div class="slider">
-  <div class="all-slide owl-item">
-    <div class="single-slide" style="background-image:url(./../assets/img/slide1.jpg);">
-      <div class="slider-overlay"></div>
-      <div class="slider-text">
-        <h1>Bienvenue à Lyon auto clean service</h1>
-        <ul>
-          <li><a href="contact.html">Nous contacter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="single-slide" style="background-image:url(./../assets/img/slide2.jpg);">
-      <div class="slider-overlay"></div>
-      <div class="slider-text">
-        <h1>Welcome To Our Car Wash</h1>
-        <ul>
-          <li><a href="contact.html">Nous contacter</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Slider Section End -->
-<!-- Why Choose Us Section  Start -->
-<div class="why-choose-sec">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 inner-box">
-        <div class="single-intro">
-          <h1>Des employés qualifiés</h1>
-          <p>Nous mettons a votre disposition des employés qualifiés et expérimentés dans le domaine.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 inner-box">
-        <div class="single-intro ">
-          <h1>assistance 7/7 jours</h1>
-          <p>Notre service vous vient en soutient pour vos besoin toute la semaine avec.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 inner-box">
-        <div class="single-intro ">
-          <h1>Vérification et de sécurité </h1>
-          <p>Recuperer votre auto en toute securite et reprennez vos activites d'aussi belle.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Why Choose Us Section End -->
 
-<!-- Service Start -->
-<div class="service pt-50 pb-20">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="sec-title">
-          <h1>Nos services</h1>
-          <div class="border-shape"></div>
-          <p>LYON AUTO CLEAN SERVICES INTERVIENT SUR TOUS TYPES DE VÉHICULES.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-sm-4 inner">
-        <div class="single-service">
-          <div class="service-thumb">
-            <img src="./../assets/img/s1.jpg" alt="">
-            <div class="service-overlay">
-              <a href="service-details.html" class="btn readmore">En savoir plus</a>
-            </div>
-          </div>
-          <div class="service-text">
-            <h2><a href="service-details.html">LAVAGE EXTÉRIEUR</a></h2>
-            <p>Nos agents sont a vos service pour remettre a neuf le look de votre véhicule. Repartez avec votre véhicule comme s'il etait neuf.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4 inner">
-        <div class="single-service">
-          <div class="service-thumb">
-            <img src="./../assets/img/s2.jpg" alt="">
-            <div class="service-overlay">
-              <a href="service-details.html" class="btn readmore">En savoir plus</a>
-            </div>
-          </div>
-          <div class="service-text">
-            <h2><a href="service-details.html">LAVAGE INTÉRIEUR</a></h2>
-            <p>La poussière ne doit pas avoir sa place a l'interieurn de votre vehicule; les taches non plus.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4 inner">
-        <div class="single-service">
-          <div class="service-thumb">
-            <img src="./../assets/img/s3.jpg" alt="">
-            <div class="service-overlay">
-              <a href="service-details.html" class="btn readmore">En savoir plus</a>
-            </div>
-          </div>
-          <div class="service-text">
-            <h2><a href="service-details.html">ENTRETIEN CUIR</a></h2>
-            <p> L'utilisation de bons produits vous permettra de garder votre cuir à l'état neuf. D'éviter le craquellement, le jaunissement, la décoloration ou entre le transfert de couleur lié à un jeans par exemple.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
 
-<!-- Service End -->
-<!-- Count Up Section Start -->
-<div class="count-up-sec">
-  <div class="section-overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-        <div class="counting_sl">
-          <span><i class="fa fa-gift"></i></span><h2 class="counter">1300</h2>
-          <h4>Véhicules lavés</h4>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-        <div class="counting_sl">
-          <span><i class="fa fa-users"></i></span><h2 class="counter">720</h2>
-          <h4>Clients satisfaits</h4>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-        <div class="counting_sl">
-          <span><i class="fa fa-institution"></i></span><h2 class="counter">3</h2>
-          <h4>Nos Agences</h4>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-        <div class="counting_sl">
-          <span><i class="fa fa-user"></i></span><h2 class="counter">18</h2>
-          <h4>Nos employés</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Count Up Section End -->
-<!-- Pricing Section Start -->
-<div class="pricing-sec price-bg">
-  <div class="pricing-overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="sec-title">
-          <h1 id="tarif">Nos prix</h1>
-          <div class="border-shape"></div>
-          <p>Choisissez une formule adaptée à vos besoins.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner-item">
-        <div class="sngl-price">
-          <div class="price-heading">
-            <h3>EXTERIEUR</h3>
-            <h1>20 €</h1>
-            <i class="fa fa-pencil"></i>
-          </div>
-          <ul>
-            <li>Carrosserie</li>
-            <li>Vitres exterieurs</li>
-            <li>Jantes</li>
-            <li>Pneus</li>
 
-          </ul>
-          <div class="snglPrice-lrnMore">
-            <a href="contact.html" class="btn price_btn">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner-item">
-        <div class="sngl-price">
-          <div class="price-heading">
-            <h3>INTERIEUR</h3>
-            <h1>25 €</h1>
-            <i class="fa fa-paint-brush"></i>
-          </div>
-          <ul>
-            <li>Dépoussiérage </li>
-            <li>Aspiration</li>
-            <li>Vitres internes</li>
-            <li>Entretien cuir (+5€)</li>
-          </ul>
-          <div class="snglPrice-lrnMore">
-            <a href="contact.html" class="btn price_btn">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner-item">
-        <div class="sngl-price">
-          <div class="price-heading">
-            <h3>EXTERIEUR ET INTERIEUR</h3>
-            <h1>40 €</h1>
-            <i class="fa fa-mortar-board"></i>
-          </div>
-          <ul>
-            <li>Carrosserie</li>
-            <li>Vitres exterieurs</li>
-            <li>Jantes</li>
-            <li>Pneus</li>
-            <li>Dépoussiérage </li>
-            <li>Aspiration</li>
-            <li>Vitres internes</li>
-            <li>Entretien cuir (+5€)</li>
-          </ul>
-          <div class="snglPrice-lrnMore">
-            <a href="contact.html" class="btn price_btn">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner-item">
-        <div class="sngl-price">
-          <div class="price-heading">
-            <h3>PREMIUM</h3>
-            <h1>70 €</h1>
-            <i class="fa fa-magic"></i>
-          </div>
-          <ul>
-            <li>Lavage Extérieur</li>
-            <li>Lavage Intérieur</li>
-            <li>Entretient cuir</li>
-            <li>Entretient moteur</li>
-
-          </ul>
-          <div class="snglPrice-lrnMore">
-            <a href="contact.html" class="btn price_btn">Réserver</a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Pricing Section End -->
-<!-- Call To Action Section Start -->
-<div class="call-to-action-sec">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-sm-8">
-        <div class="call-to-action-text">
-          <h2>Pour plus d'information </h2>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <div class="call-to-action-text">
-          <a href="contact.html" class="btn">Nous contacter</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Call To Action Section Start -->
-<!-- Footer Section Start -->
-<footer>
-  <!-- Footer Bottom Section Start -->
-  <div class="footer-bottom-sec">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="copy-right">
-            <p>&copy; 2017 Lyon Auto Clean Service.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Footer Bottom Section End -->
-</footer>
