@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="login">
+      <div class="login-triangle"></div>
+
+      <h2 class="login-header">Vos informations</h2>
+
+      <form class="login-container" #loginForm="ngForm">
+        <p><input [(ngModel)]="user.email" name="email" placeholder="Email" class="{{classLogin}}" /></p>
+        <span *ngIf="errLogin" class="erruer">{{errLogin}}</span>
+        <p><input [(ngModel)]="user.password" name="password" type="password" placeholder="Password" class="{{classPassword}}"
+             required minlengh="4" #password="ngModel"></p>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          <span *ngIf="password.errors.requierd" class="erreur">Ne peut pas etre vide</span>
+          <span *ngIf="password.errors.minlengh" class="erreur">Superieur ou egal a 4 caractere</span>
+        </div>
+        <p><input type="submit" value="Log in" (click)="login($event)"></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer style="margin-top: 60px">
+  <!-- Footer Bottom Section Start -->
+  <div class="footer-bottom-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copy-right">
+            <p>&copy; 2017 Lyon Auto Clean Service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Bottom Section End -->
+</footer>

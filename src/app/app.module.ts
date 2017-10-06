@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Injectable } from '@angular/core';
 
 import {RouterModule,Routes} from '@angular/router';
 
@@ -10,6 +11,7 @@ import {ServiceComponent} from "./service/service.component";
 import {ServiceDetailsComponent} from "./service-details/service-details.component";
 import {IndexComponent} from "./index/index.component";
 import {ContactComponent} from "./contact/contact.component";
+import {LoginComponent} from "./sign/login.component";
 
 
 const appRoutes: Routes = [
@@ -17,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'service', component: ServiceComponent },
   { path: 'service-details',      component: ServiceDetailsComponent },
   { path: 'contact',      component: ContactComponent },
+  { path: 'login',      component: LoginComponent },
 ];
 
 
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
     ServiceComponent,
     ServiceDetailsComponent,
     IndexComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(
