@@ -3,18 +3,18 @@
     <div class="login">
       <div class="login-triangle"></div>
 
-      <h2 class="login-header">Vos informations</h2>
-
-      <form class="login-container" #loginForm="ngForm">
-        <p><input [(ngModel)]="user.email" name="email" placeholder="Email" class="{{classLogin}}" /></p>
-        <span *ngIf="errLogin" class="erruer">{{errLogin}}</span>
-        <p><input [(ngModel)]="user.password" name="password" type="password" placeholder="Password" class="{{classPassword}}"
-             required minlengh="4" #password="ngModel"></p>
-        <div *ngIf="password.invalid && (password.dirty || password.touched)">
-          <span *ngIf="password.errors.requierd" class="erreur">Ne peut pas etre vide</span>
-          <span *ngIf="password.errors.minlengh" class="erreur">Superieur ou egal a 4 caractere</span>
+      <h2 class="login-header" align="center">Vos informations</h2>
+      <div align="center" *ngIf="erreurLogin"><span class="erreur">{{erreurLogin}}</span></div>
+      <div align="center" *ngIf="successLogin"><span class="success">{{erreurLogin}}</span></div>
+      <form class="login-container" #loginForm="ngForm" (ngSubmit)="login($event)" autocomplete="off">
+        <p><input [(ngModel)]="user.email" name="email" placeholder="Email" type="email" class="{{classLogin}}" required></p>
+        <p><input [(ngModel)]="user.mdp" name="mdp" type="password" placeholder="Password" class="{{classPassword}}"
+             required minlengh="8" #mdp="ngModel"></p>
+        <div *ngIf="mdp.invalid && (mdp.dirty || mdp.touched)">
+          <span *ngIf="mdp.errors.requierd" class="erreur">Ne peut pas etre vide</span>
+          <span *ngIf="mdp.errors.minlengh" class="erreur">Superieur ou egal a 4 caractere</span>
         </div>
-        <p><input type="submit" value="Log in" (click)="login($event)"></p>
+        <p><input type="submit" value="Log in"></p>
       </form>
     </div>
   </div>

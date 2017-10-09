@@ -12,6 +12,8 @@ import {ServiceDetailsComponent} from "./service-details/service-details.compone
 import {IndexComponent} from "./index/index.component";
 import {ContactComponent} from "./contact/contact.component";
 import {LoginComponent} from "./sign/login.component";
+import {JoinComponent} from "./sign/join.component";
+import {ProfileComponent} from "./profile/profile.component"
 
 
 const appRoutes: Routes = [
@@ -20,6 +22,8 @@ const appRoutes: Routes = [
   { path: 'service-details',      component: ServiceDetailsComponent },
   { path: 'contact',      component: ContactComponent },
   { path: 'login',      component: LoginComponent },
+  { path: 'join',      component: JoinComponent },
+  { path: 'profile',      component: ProfileComponent },
 ];
 
 
@@ -31,7 +35,9 @@ const appRoutes: Routes = [
     ServiceDetailsComponent,
     IndexComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    JoinComponent,
+    ProfileComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -1,0 +1,67 @@
+<div class="panel panel-primary" style="margin:40px;">
+  <div class="panel-heading">
+    <h3 class="panel-title" align="center">Information d'inscription</h3>
+  </div>
+<div class="container" >
+  <form class="form-horizontal" role="form" #joinForm="ngForm" (ngSubmit)="join(f)" autocomplete="off">
+    <div class="form-group">
+      <label for="nom" class="col-sm-3 control-label">Nom :*</label>
+      <div class="col-sm-9">
+        <input type="text" id="nom" placeholder="Nom" class="form-control"
+               [(ngModel)]="user.nom" name="nom" #nom="ngModel" required autofocus>
+        <div *ngIf="nom.invalid && (nom.dirty || nom.touched)">
+          <h6 class="erreur" *ngIf="nom.errors.required">Saisie obligatoire.</h6>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="prenom" class="col-sm-3 control-label">Prenom :*</label>
+      <div class="col-sm-9">
+        <input type="text" id="prenom" placeholder="Prenom" class="form-control"
+               [(ngModel)]="user.prenom" name="prenom" #prenom="ngModel" required autofocus>
+        <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)">
+          <h6 class="erreur" *ngIf="prenom.errors.required">Saisie obligatoire.</h6>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="telephone" class="col-sm-3 control-label">Telephone :*</label>
+      <div class="col-sm-9">
+        <input type="number" id="telephone" placeholder="Telephone" class="form-control"
+               [(ngModel)]="user.telephone" name="telephone" #telephone="ngModel" minlengh="10" maxlength="10" required>
+        <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+          <h6 class="erreur" *ngIf="telephone.errors.required">Saisie obligatoire.</h6>
+        </div>
+      </div>
+      </div>
+    <div class="form-group">
+      <label for="email" class="col-sm-3 control-label">Email :*</label>
+      <div class="col-sm-9">
+        <input type="email" id="email" placeholder="Email" class="form-control"
+               [(ngModel)]="user.email" name="email" #email="ngModel" required>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <h6 class="erreur" *ngIf="email.errors.required">Saisie obligatoire.</h6>
+        </div>
+        <h6 class="erreur" *ngIf="errEmail">{{errEmail}}</h6>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" class="col-sm-3 control-label">Password :*</label>
+      <div class="col-sm-9">
+        <input type="password" id="password" placeholder="Password" class="form-control"
+               [(ngModel)]="user.mdp" name="mdp" #mdp="ngModel" minlengh="8" required>
+        <div *ngIf="mdp.invalid && (mdp.dirty || mdp.touched)">
+          <h6 class="erreur" *ngIf="mdp.errors.required">Saisie obligatoire.</h6>
+          <h6 class="erreur" *ngIf="mdp.errors.minlengh">Minimum 8 caractere.</h6>
+        </div>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-9 col-sm-offset-3">
+        <button type="submit" class="btn btn-primary btn-block">Enregistrer</button>
+      </div>
+    </div>
+  </form> <!-- /form -->
+</div> <!-- ./container -->
+</div>

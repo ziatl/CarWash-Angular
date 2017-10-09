@@ -3,15 +3,17 @@ export class User {
   public nom;
   public prenom;
   public email;
-  public password;
+  public mdp;
   public adresse;
+  public telephone;
 
   constructor(){
     this.nom = "";
     this.prenom = "";
-    this.password = "";
+    this.mdp = "";
     this.email = "";
     this.adresse = "";
+    this.telephone = "";
   }
 
 

@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit{
   classPassword = "";
   errLogin = "";
   errPassword = "";
+  erreurLogin = "";
   user = new User();
 
   reponse:User[];
@@ -31,26 +32,36 @@ export class LoginComponent implements OnInit{
   }
 
 
-
+  /*
+  *Login
+   */
   login ($event){
 
     this.classLogin = "";
-      this.classPassword = "";
+    this.classPassword = "";
+    let erreur = false;
       if (this.user.email == ""){
+        erreur = true;
         this.classLogin = "error-field";
       }
 
-      if (this.user.password == "") {
+      if (this.user.mdp == "") {
+        erreur = true;
         this.classPassword = "error-field";
       }
 
-      this.userService.getUser().subscribe(data => {
-        this.reponse = data;
-        console.log(this.reponse);
+    let resultat:any;
+    if (erreur==false) {
+      this.userService.login(this.user.email,this.user.mdp).subscribe(data => {
+        resultat = data;
+        console.log(resultat);
+        if(resultat.id == 0) {
+          this.erreurLogin = "Email ou Mot de passe incorrecte."
+        }
       });
-
-
+    }
   }
+
 
 
 
