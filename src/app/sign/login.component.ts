@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {User} from "./../models/user.model";
 import { FormsModule, FormGroup, Validators } from '@angular/forms';
 import {UserService} from './../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector:'tag-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit{
   reponse:User[];
 
 
-  constructor(public userService: UserService){
+  constructor(public userService: UserService,public router:Router){
     this.user = new User();
 
   }
@@ -57,6 +58,13 @@ export class LoginComponent implements OnInit{
         console.log(resultat);
         if(resultat.id == 0) {
           this.erreurLogin = "Email ou Mot de passe incorrecte."
+        }else {
+          localStorage.setItem("wcemail",resultat.email);
+          localStorage.setItem("wcnom",resultat.nom);
+          localStorage.setItem("wcprenom",resultat.prenom);
+          localStorage.setItem("wcid",resultat.id);
+          console.log(this.user)
+          window.location.href = "/";
         }
       });
     }

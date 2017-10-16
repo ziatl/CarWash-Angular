@@ -64,16 +64,30 @@
                 <li><a href="#tarif">Tarifs</a></li>
                 <li><a routerLink="/contact" routerLinkActive="active" (click)="showContact()">Nous contacter</a></li>
                 <li>
-                  <a routerLink="/login" routerLinkActive="active">
-                    System<i class="fa fa-caret-down"></i>
+                  <div>
+
+                  </div>
+                    <a routerLink="/login" routerLinkActive="active">
+                    Compte<i class="fa fa-caret-down"></i>
                   </a>
                   <ul>
-                    <li><a routerLink="/login" routerLinkActive="active">
-                      Connexion</a></li>
-                    <li><a routerLink="/join" routerLinkActive="active">
+                    <div [hidden]="hideCon">
+                      <li><a routerLink="/login" routerLinkActive="active" href>
+                        Connexion</a></li>
+                    </div>
+                    <div [hidden]="hideCon">
+                      <li><a routerLink="/join" routerLinkActive="active">
                       Inscription</a></li>
+                    </div>
+                    <div [hidden]="!hideCon">
                     <li><a routerLink="/profile" routerLinkActive="active">
                       Mon compte</a></li>
+                    </div>
+                    <div [hidden]="!hideCon">
+                      <li><a (click)="disconnect()" href>
+                        Deconnexion</a></li>
+                    </div>
+
                   </ul>
 
                 </li>

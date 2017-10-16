@@ -1,5 +1,6 @@
 export class User {
 
+  public id;
   public nom;
   public prenom;
   public email;
@@ -8,6 +9,7 @@ export class User {
   public telephone;
 
   constructor(){
+    this.id = 0;
     this.nom = "";
     this.prenom = "";
     this.mdp = "";

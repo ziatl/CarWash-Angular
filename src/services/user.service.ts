@@ -23,8 +23,6 @@ export class UserService {
   }
 
   public join(){
-    console.log("post user")
-
     return this.http
       .post(this.baseUrl+"user",JSON.stringify(this.user),this.options)
       .map(response => response.json());
@@ -39,9 +37,10 @@ export class UserService {
   /*
    *GetUser by id
    */
-  public getUserById(){
-    this.headers.append('Content-Type', 'application/json');
-
+  public getUserById(id:string){
+    let user = {id:localStorage.getItem("wcid")};
+    return this.http.get(this.baseUrl+"user/"+id,this.options)
+      .map(response => response.json());
   }
 
 }
