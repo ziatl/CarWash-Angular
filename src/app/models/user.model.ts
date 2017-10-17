@@ -7,6 +7,8 @@ export class User {
   public mdp;
   public adresse;
   public telephone;
+  public dateCreate;
+  public dateUpdate;
 
   constructor(){
     this.id = 0;
@@ -16,6 +18,8 @@ export class User {
     this.email = "";
     this.adresse = "";
     this.telephone = "";
+    this.dateCreate = "";
+    this.dateUpdate = "";
   }
 
 

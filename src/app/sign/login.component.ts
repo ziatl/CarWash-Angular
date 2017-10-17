@@ -63,7 +63,6 @@ export class LoginComponent implements OnInit{
           localStorage.setItem("wcnom",resultat.nom);
           localStorage.setItem("wcprenom",resultat.prenom);
           localStorage.setItem("wcid",resultat.id);
-          console.log(this.user)
           window.location.href = "/";
         }
       });

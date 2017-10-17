@@ -36,6 +36,8 @@ export class JoinComponent{
         console.log(this.reponse);
         if (this.reponse.id == 0){
           this.errEmail = "Adresse e-mail déjà utilisé.";
+        }else {
+          window.location.href = "/";
         }
       });
   }

@@ -31,37 +31,39 @@
       <div class="col-md-8">
         <div class="contact-field">
           <h2>Nous envoyer un message</h2>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-input-field">
-              <h4>Nom (obligatoire) </h4>
-              <input type="text"/>
+          <form class="form-group" #contactForm="ngForm" (ngSubmit)="contacter()">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-input-field">
+                <h4>Nom (obligatoire) </h4>
+                <input type="text" #nom="ngModel" [(ngModel)]="contact.nom" name="nom" required/>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-input-field">
-              <h4>E-mail (obligatoire)</h4>
-              <input type="email"/>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-input-field">
+                <h4>E-mail (obligatoire)</h4>
+                <input type="email" #prenom="ngModel" [(ngModel)]="contact.email" name="email" required/>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-input-field">
-              <h4>Sujet (Obligatoire)</h4>
-              <input type="text"/>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-input-field">
+                <h4>Sujet (Obligatoire)</h4>
+                <input type="text" #sujet="ngModel" [(ngModel)]="contact.sujet" name="sujet" required/>
+              </div>
             </div>
-          </div>
-          <div class="col-md-12 message-input">
-            <div class="single-input-field">
-              <h4>Message (Obligatoire)</h4>
-              <textarea></textarea>
+            <div class="col-md-12 message-input">
+              <div class="single-input-field">
+                <h4>Message (Obligatoire)</h4>
+                <textarea #nom="ngModel" [(ngModel)]="contact.message" name="message" required></textarea>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-input-fieldsbtn">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-input-fieldsbtn">
 
-              <input type="submit" value="Envoyer"/>
+                <input type="submit" value="Envoyer"/>
 
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
       <div class="col-md-4">
