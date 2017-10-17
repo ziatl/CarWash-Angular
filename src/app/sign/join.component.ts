@@ -16,10 +16,12 @@ export class JoinComponent{
   reponse:any;
   user = new User();
   errEmail = "";
+  etat = "";
   constructor(public userService: UserService){
     this.userService.user = {};
     this.user = new User();
     this.errEmail = "";
+    this.etat = "false";
   }
 
   public join(f:NgForm){
@@ -36,8 +38,9 @@ export class JoinComponent{
         console.log(this.reponse);
         if (this.reponse.id == 0){
           this.errEmail = "Adresse e-mail déjà utilisé.";
+          this.userService.user = {};
         }else {
-          window.location.href = "/";
+          this.etat = "false";
         }
       });
   }

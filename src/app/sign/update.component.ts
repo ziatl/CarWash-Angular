@@ -16,13 +16,13 @@ export class UpdateComponent{
   reponse:any;
   user = new User();
   errEmail = "";
+  etat = "";
   constructor(public userService: UserService){
     this.userService.user = {};
     this.user = new User();
     this.userService.getUserById(localStorage.getItem("wcid")).subscribe(data=>{
       this.reponse = data;
       this.jsonToUser(this.reponse);
-      console.log(this.user);
     });
 
   }
@@ -43,9 +43,10 @@ export class UpdateComponent{
       this.reponse = data;
       if (this.reponse.id == 0){
         this.errEmail = "Adresse e-mail déjà utilisé.";
+        this.userService.user = {};
       }else {
         this.jsonToUser(this.reponse);
-        console.log(this.user);
+        this.etat = "true";
       }
     });
   }
