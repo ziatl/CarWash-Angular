@@ -28,6 +28,13 @@ export class UserService {
       .map(response => response.json());
   }
 
+  public updateUser(){
+    console.log(this.user);
+    return this.http
+      .put(this.baseUrl+"user",JSON.stringify(this.user),this.options)
+      .map(response => response.json());
+  }
+
   public login(email:String,mdp:String){
     let user = {email:email,mdp:mdp};
     return this.http.post(this.baseUrl+"login",JSON.stringify(user),this.options)
@@ -42,5 +49,8 @@ export class UserService {
     return this.http.get(this.baseUrl+"user/"+id,this.options)
       .map(response => response.json());
   }
+
+
+
 
 }
