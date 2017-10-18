@@ -18,9 +18,6 @@ export class AppComponent {
   }
 
   showService(){
-      console.log("show ser");
-      let nom = localStorage.getItem("nom");
-      console.log(nom);
   }
   showServiceDetails(){
 

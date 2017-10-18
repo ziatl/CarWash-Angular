@@ -21,7 +21,6 @@ export class JoinComponent{
     this.userService.user = {};
     this.user = new User();
     this.errEmail = "";
-    this.etat = "false";
   }
 
   public join(f:NgForm){
