@@ -53,7 +53,7 @@
             <div class="col-md-12 message-input">
               <div class="single-input-field">
                 <h4>Message (Obligatoire)</h4>
-                <textarea #nom="ngModel" [(ngModel)]="contact.message" name="message" required></textarea>
+                <textarea #nom="ngModel" [(ngModel)]="contact.message" name="message" minlength="15" required></textarea>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">

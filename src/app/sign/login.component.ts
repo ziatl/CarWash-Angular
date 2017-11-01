@@ -26,6 +26,9 @@ export class LoginComponent implements OnInit{
 
   constructor(public userService: UserService,public router:Router){
     this.user = new User();
+    if(localStorage.getItem("loginState")){
+      window.location.href = "/profile";
+    }
 
   }
   ngOnInit(){
@@ -63,6 +66,7 @@ export class LoginComponent implements OnInit{
           localStorage.setItem("wcnom",resultat.nom);
           localStorage.setItem("wcprenom",resultat.prenom);
           localStorage.setItem("wcid",resultat.id);
+          localStorage.setItem("loginState","true");
           window.location.href = "/";
         }
       });

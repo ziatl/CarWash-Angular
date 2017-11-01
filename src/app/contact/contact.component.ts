@@ -14,9 +14,15 @@ export class ContactComponent{
 
   constructor(public contactService:ContactService){
     this.contact = new ContactModel();
-    this.contact.nom = "";
+    if (localStorage.getItem("wcemail")){
+      this.contact.email = localStorage.getItem("wcemail");
+    }
+    if (localStorage.getItem("wcnom")){
+      this.contact.nom = localStorage.getItem("wcnom");
+    }
+
     this.contact.sujet = "";
-    this.contact.email = "";
+
     this.contact.message = "";
   }
 

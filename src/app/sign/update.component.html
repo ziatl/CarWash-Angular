@@ -1,4 +1,4 @@
-<div class="alert alert-info" align="center" *ngIf="etat">
+<div class="alert alert-info" align="center" *ngIf="etat" id="mon_div">
   Modification effectuée avec succès !
 </div>
 <div class="panel panel-primary" style="margin:40px;">
@@ -61,10 +61,10 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="telephone" class="col-sm-3 control-label">Telephone :*</label>
+        <label for="telephone" class="col-sm-3 control-label">Adresse :*</label>
         <div class="col-sm-9">
           <input type="text" id="adresse" placeholder="Adresse" class="form-control"
-                 [(ngModel)]="user.adresse" name="adresse" #adresse="ngModel" minlengh="10" maxlength="10" required>
+                 [(ngModel)]="user.adresse" name="adresse" #adresse="ngModel" maxlength="40" required>
           <div *ngIf="adresse.invalid && (adresse.dirty || adresse.touched)">
             <h6 class="erreur" *ngIf="adresse.errors.required">Saisie obligatoire.</h6>
           </div>
@@ -72,7 +72,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-9 col-sm-offset-3">
-          <button type="submit" class="btn btn-primary btn-block">Modifier</button>
+          <button type="submit" class="btn btn-primary btn-block" id="mon_anim">Modifier</button>
         </div>
       </div>
     </form> <!-- /form -->

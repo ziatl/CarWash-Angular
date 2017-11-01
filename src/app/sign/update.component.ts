@@ -19,6 +19,9 @@ export class UpdateComponent{
   etat = "";
   constructor(public userService: UserService){
     this.userService.user = {};
+    if(!localStorage.getItem("loginState")){
+      window.location.href = "/login";
+    }
     this.user = new User();
     this.userService.getUserById(localStorage.getItem("wcid")).subscribe(data=>{
       this.reponse = data;
