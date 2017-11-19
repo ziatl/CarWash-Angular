@@ -27,16 +27,7 @@
           </div>
         </div>
       </div>
-      <div class="form-group">
-        <label for="telephone" class="col-sm-3 control-label">Telephone :*</label>
-        <div class="col-sm-9">
-          <input type="number" id="telephone" placeholder="Telephone" class="form-control"
-                 [(ngModel)]="user.telephone" name="telephone" #telephone="ngModel" minlengh="10" maxlength="10" required>
-          <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
-            <h6 class="erreur" *ngIf="telephone.errors.required">Saisie obligatoire.</h6>
-          </div>
-        </div>
-      </div>
+
       <div class="form-group">
         <label for="email" class="col-sm-3 control-label">Email :*</label>
         <div class="col-sm-9">
@@ -61,12 +52,22 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="telephone" class="col-sm-3 control-label">Adresse :*</label>
+        <label for="adresse" class="col-sm-3 control-label">Adresse :*</label>
         <div class="col-sm-9">
           <input type="text" id="adresse" placeholder="Adresse" class="form-control"
                  [(ngModel)]="user.adresse" name="adresse" #adresse="ngModel" maxlength="40" required>
           <div *ngIf="adresse.invalid && (adresse.dirty || adresse.touched)">
             <h6 class="erreur" *ngIf="adresse.errors.required">Saisie obligatoire.</h6>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="telephone" class="col-sm-3 control-label">Telephone :*</label>
+        <div class="col-sm-9">
+          <input type="number" id="telephone" placeholder="Telephone" class="form-control"
+                 [(ngModel)]="user.telephone" name="telephone" #telephone="ngModel" minlengh="10" maxlength="10" required>
+          <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+            <h6 class="erreur" *ngIf="telephone.errors.required">Saisie obligatoire.</h6>
           </div>
         </div>
       </div>
